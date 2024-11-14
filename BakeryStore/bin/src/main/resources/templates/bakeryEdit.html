@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>BAKE STUDIO</title>
+    <style>
+        body {
+            background-image: url("/images/img_1.png");
+            background-size: cover;
+            position: relative;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .container h4 {
+            font-weight: bold;
+            font-size: 48px;
+            color: #fff;
+        }
+
+        /* Custom styles for labels */
+        label {
+            font-weight: bold;
+            font-size: 20px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">BAKE STUDIO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="/">HOME</a></li>-->
+<!--                <li class="nav-item"><a class="nav-link text-white" href="available_bakery">HANDY ITEMS</a></li>-->
+<!--              <li class="nav-item"><a class="nav-link text-white" href="my_bakery">MY CHOICE</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container my-5 p-5" style="border: 1px solid black;">
+    <h4 class="text-center" style="font-size: 48px; color: #fff;">EDIT BAKERY DETAILS</h4>
+    <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${bakery}">
+        <input type="hidden" name="id" th:value="${bakery.id}"/>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" th:value="${bakery.name}">
+        </div>
+        <div class="mb-3">
+            <label for="btype" class="form-label">Type</label>
+            <input type="text" class="form-control" name="btype" th:value="${bakery.btype}">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" class="form-control" name="price" th:value="${bakery.price}">
+        </div>
+        <center>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </center>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

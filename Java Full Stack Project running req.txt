@@ -1,0 +1,13 @@
+Java Full Stack Project running requirements --
+
+Password of application admin -- Java
+want to see the database (h2 in memory database is used ) --
+---follow below steps After your application succesfully runs-
+1. Go To - http://localhost:8090/h2-console
+2. Enter Credentials as follows -- 
+	JDBC URL: jdbc:h2:mem:bookstoredb
+	Username: sa (default username for H2)
+	Password: test
+3. run query to view database 
+--- SELECT * FROM MY_BAKERY 
+And Boom...........Thank  you 

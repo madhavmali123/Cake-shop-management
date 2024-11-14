@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BAKE STUDIO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Custom CSS styles */
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .navbar-brand img.logo {
+      max-height: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .jumbotron {
+      background-image: url("/images/img_1.png");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 100px;
+      text-align: center;
+    }
+
+    .jumbotron h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .jumbotron h6 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+    .jumbotron img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Adjust text visibility */
+    .jumbotron .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 50px;
+    }
+
+    .jumbotron h1, .jumbotron h6 {
+      color: #fff;
+    }
+
+    /* Set background image size */
+    @media (max-width: 768px) {
+      .jumbotron {
+        background-size: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/images/img_3.png" alt="Logo" class="logo">
+            BAKE STUDIO
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="available_bakery">HANDY ITEMS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="my_bakery">MY CHOICE</a>
+                </li>
+            </ul>
+<!--            <a class="nav-link" href="bakery_register">ADD NEW ITEM</a>-->
+            <button type="button" class="btn btn-primary" onclick="checkAdminPin()">ADD NEW ITEM</button>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>From Our Oven to Your Heart: Fall in Love with the Flavors of The Sweet Oven</h1>
+        <h6>At our bakery, we believe that every milestone deserves a delectable masterpiece. Our custom-made cakes are meticulously crafted to not only taste exquisite but also reflect your unique style. From elegant wedding cakes to whimsical birthday creations, our skilled pastry chefs work closely with you to bring your vision to life. Let us create a centerpiece that will leave a lasting impression on your guests and make your special occasion truly unforgettable.</h6>
+        <img src="/images/img_1.png" alt="Bakery Image">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+        function checkAdminPin() {
+            // Change this pin to match the one in your program
+            var correctPin = "Dheeraj";
+
+            // Prompt the user for the pin
+            var enteredPin = prompt("Enter Admin Pin:");
+
+            // Check if the entered pin matches the correct pin
+            if (enteredPin === correctPin) {
+                // If it matches, redirect to the "ADD NEW ITEM" page
+                window.location.href = "bakery_register"; // Change the URL to your actual "ADD NEW ITEM" page
+            } else {
+                // If it doesn't match, show an alert and stay on the current page
+                alert("Incorrect Admin Pin. Returning to Home Page.");
+                // window.location.href = "/"; // Uncomment this line if you want to return to the home page
+            }
+        }
+    </script>
+</body>
+</html>
